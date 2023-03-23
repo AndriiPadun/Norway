@@ -1,3 +1,3 @@
-_null.scss
-_popup.scss
-style.scss
+style/_null.scss
+style/_popup.scss
+style/style.scss
