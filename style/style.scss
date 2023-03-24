@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,regular,500,700,900&display=swap');
 @mixin buttonstyle{
+    cursor: pointer;
     background: #3D3D3D;
        border-radius: 5px;
        padding: 28px 22px;
@@ -17,10 +18,10 @@
         flex: 0 1 261px;
         transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: inset -1px 3px 8px 5px #bbbbbb;
+            box-shadow: inset -1px 3px 8px 5px #bbbbbb63;
         }
         &:active{
-            box-shadow: inset -1px 3px 40px 5px #bbbbbb;
+            box-shadow: inset -1px 3px 40px 5px #bbbbbba6;
         }
 }
 
@@ -150,7 +151,7 @@ body {
    background-image: url('../img/home/norway.jpg');
    background-size: cover;
    background-position: center;
-   transition: background-image 1s ease;
+   transition: all 0.6s ease;
     // .norway__background
     // &__background{
     //     object-fit: cover;
@@ -264,13 +265,13 @@ body {
     background-image: url('../img/home/Geirangerfjord.jpg');
     background-size: cover;
     background-position: center;
-    transition: background-image 1s ease;
+    transition: all 0.6s ease;
 }
 .slide-2{
     background-image: url('../img/home/Trondheim.jpg');
     background-size: cover;
     background-position: center;
-    transition: background-image 1s ease;
+    transition: all 0.6s ease;
 }
 .pagination {
 display: flex;
@@ -319,7 +320,7 @@ flex-direction: column;
             left: 0;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
-            filter: blur(3px);
+            // filter: blur(3px);
             content: '';
             transition: all 0.4s ease;
         }
@@ -1071,6 +1072,10 @@ padding-right: 35px;
         line-height: 123.333333%; /* 37px/30 */
         text-transform: capitalize;
         word-break: break-all;
+        transition: text-shadow 0.4s ease-in;
+        &:hover{
+            text-shadow:0 6px 8px rgba(0,0,0,.35)
+        }
         color: #000000;
         // align-self: center;
         @media (max-width:999.98px) {
@@ -1079,6 +1084,7 @@ padding-right: 35px;
         @media (max-width:859.98px) {
             font-size: 22px; 
         }
+        
     }
    } 
 
@@ -1141,6 +1147,12 @@ color: #4E4E4E;
         border: 1px solid #4E4E4E;
         border-radius: 5px;
         background-color: transparent;
+        &:focus{
+            &::placeholder{
+                opacity: 0;
+                transition: all 0.3s ease-in;
+            }
+        }
         
     }
 
@@ -1158,11 +1170,14 @@ color: #4E4E4E;
     position: absolute;
     top: calc(100% - 150px);
     transition: all 0.2s ease-in;
+    &:hover{
+        scale: 1.1;
+    }
     @media (max-width:767.98px) {
         top: calc(100% - 235px);
        }
        &:active{
-        scale: 1.1;
+        scale: 1.0;
        }
 }
 .to-right {
@@ -1267,7 +1282,10 @@ color: #4E4E4E;
         margin: 0 auto;
         position: relative;
         padding: 148px 150px 127px 150px;
-        background: url("../img/feedback/background-feedback.jpg") no-repeat center / cover;
+        background-image:linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/feedback/background-feedback.jpg");
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
         display: flex;
         flex-wrap: wrap;
         row-gap: 50px;
@@ -1289,7 +1307,7 @@ color: #4E4E4E;
     }
     &__button{
         @include buttonstyle;
-        padding: 5px;
+        padding: 12px;
         position: absolute;
         bottom: 15px;
         @media (max-width:470px) {

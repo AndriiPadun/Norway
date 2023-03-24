@@ -320,9 +320,9 @@ body {
   background-image: url("../img/home/norway.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-transition: background-image 1s ease;
-  -o-transition: background-image 1s ease;
-  transition: background-image 1s ease;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 .norway__top-row {
   position: relative;
@@ -451,18 +451,18 @@ body {
   background-image: url("../img/home/Geirangerfjord.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-transition: background-image 1s ease;
-  -o-transition: background-image 1s ease;
-  transition: background-image 1s ease;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 .slide-2 {
   background-image: url("../img/home/Trondheim.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-transition: background-image 1s ease;
-  -o-transition: background-image 1s ease;
-  transition: background-image 1s ease;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 .pagination {
@@ -534,8 +534,6 @@ body {
   left: 0;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
   content: "";
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -1314,7 +1312,13 @@ body {
   line-height: 123.333333%; /* 37px/30 */
   text-transform: capitalize;
   word-break: break-all;
+  -webkit-transition: text-shadow 0.4s ease-in;
+  -o-transition: text-shadow 0.4s ease-in;
+  transition: text-shadow 0.4s ease-in;
   color: #000000;
+}
+.places a.places__name:hover {
+  text-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
 }
 @media (max-width: 999.98px) {
   .places a.places__name {
@@ -1391,9 +1395,36 @@ body {
   border-radius: 5px;
   background-color: transparent;
 }
+.search-beauties__input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.search-beauties__input:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.search-beauties__input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.search-beauties__input:focus::-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.search-beauties__input:focus::placeholder {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
 .search-beauties__button {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  cursor: pointer;
   background: #3D3D3D;
   border-radius: 5px;
   padding: 28px 22px;
@@ -1412,12 +1443,12 @@ body {
   transition: all 0.3s ease-in;
 }
 .search-beauties__button:hover {
-  -webkit-box-shadow: inset -1px 3px 8px 5px #bbbbbb;
-          box-shadow: inset -1px 3px 8px 5px #bbbbbb;
+  -webkit-box-shadow: inset -1px 3px 8px 5px rgba(187, 187, 187, 0.3882352941);
+          box-shadow: inset -1px 3px 8px 5px rgba(187, 187, 187, 0.3882352941);
 }
 .search-beauties__button:active {
-  -webkit-box-shadow: inset -1px 3px 40px 5px #bbbbbb;
-          box-shadow: inset -1px 3px 40px 5px #bbbbbb;
+  -webkit-box-shadow: inset -1px 3px 40px 5px rgba(187, 187, 187, 0.6509803922);
+          box-shadow: inset -1px 3px 40px 5px rgba(187, 187, 187, 0.6509803922);
 }
 
 .to-left, .to-right {
@@ -1431,13 +1462,16 @@ body {
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
+.to-left:hover, .to-right:hover {
+  scale: 1.1;
+}
 @media (max-width: 767.98px) {
   .to-left, .to-right {
     top: calc(100% - 235px);
   }
 }
 .to-left:active, .to-right:active {
-  scale: 1.1;
+  scale: 1;
 }
 
 .to-right {
@@ -1560,7 +1594,12 @@ body {
   margin: 0 auto;
   position: relative;
   padding: 148px 150px 127px 150px;
-  background: url("../img/feedback/background-feedback.jpg") no-repeat center/cover;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../img/feedback/background-feedback.jpg");
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/feedback/background-feedback.jpg");
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/feedback/background-feedback.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1591,6 +1630,7 @@ body {
           flex: 0 1 350px;
 }
 .feedback__button {
+  cursor: pointer;
   background: #3D3D3D;
   border-radius: 5px;
   padding: 28px 22px;
@@ -1607,17 +1647,17 @@ body {
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  padding: 5px;
+  padding: 12px;
   position: absolute;
   bottom: 15px;
 }
 .feedback__button:hover {
-  -webkit-box-shadow: inset -1px 3px 8px 5px #bbbbbb;
-          box-shadow: inset -1px 3px 8px 5px #bbbbbb;
+  -webkit-box-shadow: inset -1px 3px 8px 5px rgba(187, 187, 187, 0.3882352941);
+          box-shadow: inset -1px 3px 8px 5px rgba(187, 187, 187, 0.3882352941);
 }
 .feedback__button:active {
-  -webkit-box-shadow: inset -1px 3px 40px 5px #bbbbbb;
-          box-shadow: inset -1px 3px 40px 5px #bbbbbb;
+  -webkit-box-shadow: inset -1px 3px 40px 5px rgba(187, 187, 187, 0.6509803922);
+          box-shadow: inset -1px 3px 40px 5px rgba(187, 187, 187, 0.6509803922);
 }
 @media (max-width: 470px) {
   .feedback__button {
