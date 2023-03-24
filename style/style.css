@@ -868,15 +868,7 @@ body {
     gap: 20px;
   }
   .pagination {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 50%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    background-color: transparent;
+    display: none;
   }
   .pagination__item {
     height: 20px;
