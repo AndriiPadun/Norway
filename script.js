@@ -19,6 +19,7 @@ document.addEventListener("click", function (e) {
 	const targetElem = e.target;
 	if(targetElem.closest (`.header__button`)){
 		menu.classList.toggle('active-menu');
+		document.body.classList.toggle(`lock`);
 	}
 	if(!targetElem.closest(`.header__nav`)){
 		menu.classList.remove('active-menu');

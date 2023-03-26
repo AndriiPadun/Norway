@@ -151,7 +151,7 @@ body {
    background-image: url('../img/home/norway.jpg');
    background-size: cover;
    background-position: center;
-   transition: all 0.6s ease;
+   transition: all 0.4s ease;
     // .norway__background
     // &__background{
     //     object-fit: cover;
@@ -265,13 +265,13 @@ body {
     background-image: url('../img/home/Geirangerfjord.jpg');
     background-size: cover;
     background-position: center;
-    transition: all 0.6s ease;
+    transition: all 0.4s ease;
 }
 .slide-2{
     background-image: url('../img/home/Trondheim.jpg');
     background-size: cover;
     background-position: center;
-    transition: all 0.6s ease;
+    transition: all 0.4s ease;
 }
 .pagination {
 display: flex;
@@ -486,11 +486,11 @@ flex-direction: column;
             right: 25px;
             transition: all 0.3s ease-in ;
             & span{
-                transition: all 1s ease-in ;
-                transform: rotate(60deg);              
+                transition: all 0.3s ease-in;
+                transform: rotate(50deg);              
                 &::before{
-                    
-                    transform: rotate(-120deg);
+                    transition: all 0.3s ease-in;
+                    transform: rotate(-100deg);
                 }
                 &::after{
                     display: none;
@@ -999,7 +999,10 @@ padding-right: 35px;
             padding-bottom: 64px;
         }
         @media screen and (min-width:1100px) {
-            padding-top: 45px;
+            padding-top: 65px;
+        }
+        @media screen and (min-width:768px) {
+            padding-bottom: 45px;
         }
     }
 

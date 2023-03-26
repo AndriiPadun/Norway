@@ -320,9 +320,9 @@ body {
   background-image: url("../img/home/norway.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .norway__top-row {
   position: relative;
@@ -451,18 +451,18 @@ body {
   background-image: url("../img/home/Geirangerfjord.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .slide-2 {
   background-image: url("../img/home/Trondheim.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .pagination {
@@ -705,17 +705,20 @@ body {
     transition: all 0.3s ease-in;
   }
   .active-menu ~ .header__button span {
-    -webkit-transition: all 1s ease-in;
-    -o-transition: all 1s ease-in;
-    transition: all 1s ease-in;
-    -webkit-transform: rotate(60deg);
-        -ms-transform: rotate(60deg);
-            transform: rotate(60deg);
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    -webkit-transform: rotate(50deg);
+        -ms-transform: rotate(50deg);
+            transform: rotate(50deg);
   }
   .active-menu ~ .header__button span::before {
-    -webkit-transform: rotate(-120deg);
-        -ms-transform: rotate(-120deg);
-            transform: rotate(-120deg);
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    -webkit-transform: rotate(-100deg);
+        -ms-transform: rotate(-100deg);
+            transform: rotate(-100deg);
   }
   .active-menu ~ .header__button span::after {
     display: none;
@@ -1228,7 +1231,12 @@ body {
 }
 @media screen and (min-width: 1100px) {
   .beauties__block {
-    padding-top: 45px;
+    padding-top: 65px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .beauties__block {
+    padding-bottom: 45px;
   }
 }
 .beauties__places {
