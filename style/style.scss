@@ -437,10 +437,13 @@ flex-direction: column;
             height: 30px;
             z-index: 555;
             background: transparent;
+            position: relative;
             display: flex;
+            flex-direction: column;
+            
             & span{
                 width: 100%;
-                height: 2px;
+                height: 2px;              
                 display: block;
                 background-color: #FFFFFF;
                 &::before, &::after{
@@ -452,7 +455,7 @@ flex-direction: column;
                 &::before{
                     position: absolute;
                     top: 50%;
-                    margin-top: -1px;
+                    transform: translateY(-1px);
                     left: 0;
                 }
                 &::after{

@@ -17,12 +17,16 @@ const locationItemTwo = document.querySelector('.locations__item_2');
 const locationItemThree = document.querySelector('.locations__item_3');
 document.addEventListener("click", function (e) {
 	const targetElem = e.target;
-	if(targetElem.closest (`.header__button`)){
+	if(targetElem.closest (`.header__button`) ){
 		menu.classList.toggle('active-menu');
-		document.body.classList.toggle(`lock`);
+		document.body.classList.add(`lock`);
 	}
 	if(!targetElem.closest(`.header__nav`)){
 		menu.classList.remove('active-menu');
+		document.body.classList.remove(`lock`);
+	}
+	if( targetElem.closest(`.popup`)){
+		menu.classList.toggle('active-menu');
 	}
 	if(targetElem.closest(`.pagination__item_1`) || targetElem.closest(`.locations__item_1`) ){
 		norway.classList.remove(`slide-2`);
@@ -99,7 +103,11 @@ new Swiper(`.activities__slider`,{
 			slidesPerView: 4,
 			spaceBetween: 25
 		},
-	}
+	},
+	keyboard: {
+		enabled: true,
+		onlyInViewport: true,
+	  },
 })
 
 
@@ -130,11 +138,16 @@ const secondSlider = new Swiper(`.beauties__container-slider`,{
 			slidesPerView: 3,
 			spaceBetween: 36
 		},
+		
 		// 1450: {
 		// 	slidesPerView: 4,
 		// 	spaceBetween: 25
 		// },
-	}
+	},
+	keyboard: {
+		enabled: true,
+		onlyInViewport: true,
+	  },
 })
 
 
@@ -309,10 +322,11 @@ function popupOpen(curentPopup) {
 			popupClose(popupActive, false);
 		} else {
 			bodyLock();
+			
 		}
 		curentPopup.classList.add('open');
 		curentPopup.addEventListener("click", function (e) {
-			if (!e.target.closest('.popup__content')) {
+			if (!e.target.closest('.popup__content')) { 
 				popupClose(e.target.closest('.popup'));
 			}
 		});
@@ -339,7 +353,7 @@ function bodyLock() {
 	}
 	body.style.paddingRight = lockPaddingValue;
 	body.classList.add('lock');
-
+	
 	unlock = false;
 	setTimeout(function () {
 		unlock = true;
@@ -356,6 +370,9 @@ function bodyUnLock() {
 		}
 		body.style.paddingRight = '0px';
 		body.classList.remove('lock');
+		if(menu.classList.contains('active-menu')){
+			document.body.classList.add(`lock`);
+		}
 	}, timeout);
 
 	unlock = false;
@@ -370,6 +387,7 @@ document.addEventListener('keydown', function (e) {
 		popupClose(popupActive);
 	}
 });
+
 
 
   
