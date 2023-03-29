@@ -817,6 +817,9 @@ body {
   .norway {
     padding: 33px 15px 31px 15px;
     margin-bottom: 57px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .header {
     padding: 20px 15px 0px 15px;
