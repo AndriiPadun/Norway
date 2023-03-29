@@ -21,13 +21,13 @@ document.addEventListener("click", function (e) {
 		menu.classList.toggle('active-menu');
 		document.body.classList.add(`lock`);
 	}
-	if(!targetElem.closest(`.header__nav`)){
+	
+	if(!targetElem.closest(`.header__nav`) && !targetElem.closest(`.popup`)){
 		menu.classList.remove('active-menu');
 		document.body.classList.remove(`lock`);
 	}
-	if( targetElem.closest(`.popup`)){
-		menu.classList.toggle('active-menu');
-	}
+	
+	
 	if(targetElem.closest(`.pagination__item_1`) || targetElem.closest(`.locations__item_1`) ){
 		norway.classList.remove(`slide-2`);
 		norway.classList.remove(`slide-1`);
@@ -329,6 +329,7 @@ if (popupCloseIcon.length > 0) {
 		el.addEventListener('click', function (e) {
 			popupClose(el.closest('.popup'));
 			e.preventDefault();
+
 		});
 	}
 }
