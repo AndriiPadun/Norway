@@ -161,21 +161,16 @@ const swiperWrapper = document.querySelector(`.places`);
 searchButton.addEventListener("click", function(){
 	let allTogether = [];
 	allPlaces.forEach(place => {
-		
 		if(place.dataset.name !== searchInput.value.toLowerCase()){
 		place.classList.add(`remove`);
 		arrowOne.style.display  = ``;
 		arrowTwo.style.display  = ``;
 		swiperWrapper.style.transform = "translate3d(0px, 0px, 0px)";			
-		// alert.classList.add(`active-alert`);	
 		}
-		// alert.classList.remove(`active-alert`);
-		
 		if(place.dataset.name == searchInput.value.toLowerCase()){
 			place.classList.remove(`remove`);
 			allTogether.push(place)
 		}
-		
 	});
 	
 	if(allTogether.length == 0){
