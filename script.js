@@ -113,14 +113,11 @@ new Swiper(`.activities__slider`,{
 
 
 const secondSlider = new Swiper(`.beauties__container-slider`,{
-	slidesPerView: 3,
-	spaceBetween: 36,
 	navigation: {
 		nextEl:`.to-right`,
 		prevEl:`.to-left`
 	},
 	rewind:true,
-
 	breakpoints:{
 		320: {
 			slidesPerView: 1,
@@ -138,16 +135,18 @@ const secondSlider = new Swiper(`.beauties__container-slider`,{
 			slidesPerView: 3,
 			spaceBetween: 36
 		},
-		
-		// 1450: {
-		// 	slidesPerView: 4,
-		// 	spaceBetween: 25
-		// },
 	},
 	keyboard: {
 		enabled: true,
 		onlyInViewport: true,
 	  },
+	slidesPerView: 3,
+	spaceBetween: 36,
+	watchOverflow:true,
+	// runCallbacksOnInit: true,
+	// observer: true,
+	// observeSlideChildren: true,
+	// observeParents: true,
 })
 
 
@@ -157,14 +156,17 @@ const allPlaces = document.querySelectorAll(`div[data-name]`);
 const arrowOne = document.querySelector(`.to-left`);
 const arrowTwo = document.querySelector(`.to-right`);
 const alert = document.querySelector(`.alert`)
-
+const swiperWrapper = document.querySelector(`.places`);
 
 searchButton.addEventListener("click", function(){
 	let allTogether = [];
 	allPlaces.forEach(place => {
 		
 		if(place.dataset.name !== searchInput.value.toLowerCase()){
-		place.classList.add(`remove`)			
+		place.classList.add(`remove`);
+		arrowOne.style.display  = ``;
+		arrowTwo.style.display  = ``;
+		swiperWrapper.style.transform = "translate3d(0px, 0px, 0px)";			
 		// alert.classList.add(`active-alert`);	
 		}
 		// alert.classList.remove(`active-alert`);
@@ -181,7 +183,15 @@ searchButton.addEventListener("click", function(){
 	}else{
 		alert.classList.remove(`active-alert`);
 	}
-	
+	if(window. innerWidth > 320 && allTogether.length == 1){
+		secondSlider.disable()
+	}
+	if(window. innerWidth > 530 && allTogether.length <= 2){
+		secondSlider.disable()
+	}
+	if(window. innerWidth > 768 && allTogether.length <= 3){
+		secondSlider.disable()
+	}
 } );
 
 searchInput.addEventListener("keyup", function(event){
@@ -192,11 +202,15 @@ searchInput.addEventListener("keyup", function(event){
 		
 		if(place.dataset.name !== searchInput.value.toLowerCase()){
 		place.classList.add(`remove`);	
+		arrowOne.style.display  = ``;
+		arrowTwo.style.display  = ``;
+		swiperWrapper.style.transform = "translate3d(0px, 0px, 0px)";
 		}
 	
 		if(place.dataset.name == searchInput.value.toLowerCase()){
 			place.classList.remove(`remove`);
 			allTogether.push(place);
+			
 		}
 		
 	});
@@ -206,7 +220,16 @@ searchInput.addEventListener("keyup", function(event){
 	}else{
 		alert.classList.remove(`active-alert`);
 	}
-	
+	if(window. innerWidth > 320 && allTogether.length == 1){
+		secondSlider.disable()
+	}
+	if(window. innerWidth > 530 && allTogether.length <= 2){
+		secondSlider.disable()
+	}
+	if(window. innerWidth > 768 && allTogether.length <= 3){
+		secondSlider.disable()
+	}
+
 	}
 });
 
