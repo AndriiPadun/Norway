@@ -663,6 +663,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    cursor: pointer;
   }
   .header__button span {
     width: 100%;
