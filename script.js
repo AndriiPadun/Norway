@@ -88,7 +88,7 @@ new Swiper(`.activities__slider`,{
 	},
 	breakpoints:{
 		320: {
-			slidesPerView: 1,
+			slidesPerView: 1.05,
 			spaceBetween: 15
 		},
 		768: {
@@ -289,9 +289,9 @@ function scrollToAnchor(event) {
 	function scrollTo(timestamp) {
 	  if (!startTime) startTime = timestamp;
 	  const progress = timestamp - startTime;
-	  const step = Math.min(progress / (speed * 1000), 1); // Визначаємо крок анімації (не більше 1)
+	  const step = Math.min(progress / (speed * 700), 1); // Визначаємо крок анімації (не більше 1)
 	  window.scrollTo(0, startPosition + distance * step); // Прокручуємо до нової позиції
-	  if (progress < speed * 1000) requestAnimationFrame(scrollTo); // Продовжуємо анімацію, якщо не дійшли до кінця
+	  if (progress < speed * 700) requestAnimationFrame(scrollTo); // Продовжуємо анімацію, якщо не дійшли до кінця
 	}
 	if (!event.currentTarget.classList.contains('popup-link')) { // Перевіряємо чи містить елемент клас "popup-link"
 		requestAnimationFrame(scrollTo); // Запускаємо анімацію прокрутки, якщо елемент не має класу "popup-link"

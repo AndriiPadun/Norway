@@ -305,7 +305,6 @@ body {
 .norway {
   padding: 83px 52px 81px 76px;
   min-height: 100vh;
-  margin-bottom: 137px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -591,6 +590,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  padding-top: 137px;
 }
 
 @media screen and (max-height: 1195.99px) {
@@ -605,7 +605,9 @@ body {
   }
   .norway {
     padding: 53px 52px 31px 76px;
-    margin-bottom: 117px;
+  }
+  .main {
+    padding-top: 117px;
   }
   .norway__top-row {
     padding-top: 140px;
@@ -639,7 +641,9 @@ body {
   }
   .norway {
     padding: 33px 52px 31px 56px;
-    margin-bottom: 97px;
+  }
+  .main {
+    padding-top: 97px;
   }
   .header {
     padding: 30px 52px 0px 56px;
@@ -777,7 +781,9 @@ body {
   }
   .norway {
     padding: 33px 25px 31px 25px;
-    margin-bottom: 67px;
+  }
+  .main {
+    padding-top: 67px;
   }
   .header {
     padding: 28px 25px 0px 25px;
@@ -816,10 +822,12 @@ body {
 @media screen and (max-width: 849.98px) {
   .norway {
     padding: 33px 15px 31px 15px;
-    margin-bottom: 57px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .main {
+    padding-top: 57px;
   }
   .header {
     padding: 20px 15px 0px 15px;
@@ -890,8 +898,8 @@ body {
   .norway__title {
     font-size: 50px;
   }
-  .norway {
-    margin-bottom: 47px;
+  .main {
+    padding-top: 47px;
   }
 }
 .activities {
@@ -917,6 +925,7 @@ body {
   display: flex;
 }
 .activities__card {
+  cursor: pointer;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -1286,8 +1295,21 @@ body {
 .places__image {
   max-width: 507px;
   border-radius: 8px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.places__image:hover img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .places__image img {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1581,12 +1603,12 @@ body {
 }
 @media (max-width: 523.98px) {
   .partners__item {
-    max-width: 254px;
-    min-width: 200px;
+    max-width: 154px;
+    min-width: 104px;
   }
 }
 .partners__img {
-  max-height: 154px;
+  max-height: 104px;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-transition: all 0.3s ease-in;

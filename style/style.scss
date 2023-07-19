@@ -143,7 +143,6 @@ body {
 .norway{
     padding: 83px 52px 81px 76px;
     min-height: 100vh;
-    margin-bottom: 137px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -382,6 +381,7 @@ flex-direction: column;
 
 .main{
     flex: 1 1 auto;
+    padding-top: 137px;
 }
 
 
@@ -398,7 +398,10 @@ flex-direction: column;
    }
    .norway{
     padding: 53px 52px 31px 76px;
-    margin-bottom: 117px;
+    
+   }
+   .main{
+    padding-top: 117px;
    }
     .norway__top-row{
         padding-top: 140px;
@@ -424,7 +427,9 @@ flex-direction: column;
        }
        .norway{
         padding: 33px 52px 31px 56px;
-        margin-bottom: 97px;
+       }
+       .main{
+        padding-top: 97px;
        }
        .header{
         padding: 30px 52px 0px 56px;
@@ -537,7 +542,9 @@ flex-direction: column;
         }
         .norway{
             padding: 33px 25px 31px 25px;
-            margin-bottom: 67px;
+        }
+        .main{
+            padding-top: 67px;
         }
         .header{
             padding: 28px 25px 0px 25px;
@@ -571,8 +578,11 @@ flex-direction: column;
 @media screen and (max-width:849.98px) {
     .norway{
         padding: 33px 15px 31px 15px;
-        margin-bottom: 57px;
+       
         justify-content: center;
+    }
+    .main{
+        padding-top: 57px;
     }
     .header{
         padding: 20px 15px 0px 15px;
@@ -631,8 +641,8 @@ flex-direction: column;
     .norway__title{
         font-size: 50px; 
     }
-    .norway{
-        margin-bottom: 47px;
+    .main{
+       padding-top: 47px;
     }
 }
 
@@ -671,6 +681,7 @@ flex-direction: column;
     // .activities__card
 
     &__card {
+        cursor: pointer;
         position: relative;
         border-radius: 10px;
         overflow: hidden;
@@ -1048,8 +1059,14 @@ padding-right: 35px;
     &__image {
         max-width: 507px;
         border-radius: 8px;
-        
+        cursor: pointer;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        &:hover img{
+            transform: scale(1.1);
+        }
         & img{
+            transition: all 0.3s ease;
             width: 100%;
             object-fit: cover;
             border-radius: 8px;
@@ -1260,15 +1277,15 @@ color: #4E4E4E;
         display: flex;
         justify-content: center;
         @media (max-width:523.98px) {
-        max-width: 254px;
-        min-width: 200px;
+        max-width: 154px;
+        min-width: 104px;
         }
     }
     &__img{
         @media (max-width:523.98px) {
         width: 100%;
         }
-        max-height: 154px;
+        max-height: 104px;
         object-fit: cover;
         transition: all 0.3s ease-in;
         &:hover{
